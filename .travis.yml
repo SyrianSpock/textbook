@@ -1,29 +1,25 @@
 dist: bionic
 addons:
-    apt:
-        packages:
-            - texlive
-            - texlive-lang-english
-            - texlive-lang-french
-            - texlive-latex-extra
-            - texlive-science
-            - texlive-bibtex-extra
-            - biber
+  apt:
+    packages:
+    - texlive
+    - texlive-lang-english
+    - texlive-lang-french
+    - texlive-latex-extra
+    - texlive-science
+    - texlive-bibtex-extra
+    - biber
 services:
-  - docker
-
+- docker
 language: generic
-
 before_install:
-    - git submodule update --init --recursive
-
+- git submodule update --init --recursive
 script:
-    - ci/build.sh
-
+- ci/build.sh
 deploy:
   provider: releases
-  api_key: "ad236a3c83e2b5b20d5ab24c88077f0961f08333
-  file: "main.pdf"
-  skip_cleanup: true
+  api_key:
+    secure: Z/15eTKtlytWa9Q5EaWm+pmcr9/OdDRyiUgNxQxP2QP59nkP9Ht5nRdLncD8hOxDp3DQSLCOx6Qw8VNhUeOvW2vM7KAViOzLRB4aL/jBAf/U+/rLacAuuo/bJ2dSLdNlJQmvPyYvKDZ9vXyiTz0EYinA8kLzrWhN6nI5TH35nMPf+rgkwELd+i5jgNtW2fpvO+eFKvyWlmxsA2E2cACvy8vaiq853f4miTqCMdLRxMjSBF4f7uB9q6YJEMIOXphSfN14o/3FCaBLB3B72LBNdVpri7TjaMH38Df8YyF84CltrLWB1lagW7hSTekpqdc14DGZ0nKDAixx+LfgLTV9P28j8vSZ+CSRrjNDR8ZDWryP9jNiActI9Q0zCHxP0RZZWA/EHd+RKv7h+/luH2voq6WkIH9L6bMbfctlrcSca/+D6H3KBjC3KvfoyoTNA9m/qEa0N/z9A6q4xkmiFOvFQlkk/1lfBW1y4XNJHWHixrkBILoiWjlSLUcbYA0dmF7I88NHTYfLwl2fuE4dl4CPgboFI72JSmZajuOXOpy4UHUrPCZjIX9Zgbw6+v9FZ6g1X6eywNf0LYANeK5qq6Eojt5IwKw9vgTbrsZE9CxTk7zoKoR77owFz88BvtgMUQBJEbzZJiqhrSXsOl1AUReRpOR+Rp4RRMqfxY+Kgh3ReJg=
+  file: main.pdf
   on:
-    tags: false
+    repo: SyrianSpock/textbook
