@@ -1,0 +1,21 @@
+dist: bionic
+addons:
+    apt:
+        packages:
+            - texlive
+            - texlive-lang-english
+            - texlive-lang-french
+            - texlive-latex-extra
+            - texlive-science
+            - texlive-bibtex-extra
+            - biber
+services:
+  - docker
+
+language: generic
+
+before_install:
+    - git submodule update --init --recursive
+
+script:
+    - ci/build.sh
