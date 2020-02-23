@@ -19,3 +19,11 @@ before_install:
 
 script:
     - ci/build.sh
+
+deploy:
+  provider: releases
+  api_key: "ad236a3c83e2b5b20d5ab24c88077f0961f08333
+  file: "main.pdf"
+  skip_cleanup: true
+  on:
+    tags: false
